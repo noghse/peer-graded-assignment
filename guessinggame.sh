@@ -1,26 +1,34 @@
 #!/usr/bin/env bash
 # File: guessinggame.sh
 
+guess=0
+badguess=3
+function=0
 
-while :
+function try_guess {
+	echo "Please Guess Again!"
+	read guess
+}
+
+echo "Please guess the number of files in this directory!!!"
+
+read guess
+
+while [[ $guess -ne $badguess ]]
 do
-   echo "Guess a number of files in the current directory!"
-   read guess
+  function=$guess-$badguess
 
-   if (( guess == 3 ))
-   then
-	echo "Great your guess was correct congratulations!"
-	exit
-elif [[ $guess -lt 3 ]]
+	if [[ $function -ge -10 ]] && [[ $function -gt 0 ]]
+	then
+	echo "Too high"
 
-then
-	echo "Too bad your guess is too low try again!"
-
-elif [[ $guess -gt 3 ]]
-
-then
-	echo "Tood bad your guess is too high try again!"
-
-   fi
-
-  done
+	elif [[ $function -le 10 ]] && [[ $function -lt 0 ]]
+	then
+	echo "Too low"
+fi
+try_guess
+done
+	if [[ $guess = 3 ]]
+	then
+	echo "Congratulations you guessed correctly!"
+fi
