@@ -10,7 +10,17 @@ do
    if (( guess == 3 ))
    then
 	echo "Great guess congratulations!"
-      exit
+	exit
+elif [[ $guess -lt 3 ]]
+
+then
+	echo "Too bad number is too low try again!"
+
+elif [[ $guess -gt 3 ]]
+
+then
+	echo "Tood bad number is too high try again!"
+
    fi
 
   done
