@@ -1,5 +1,12 @@
 all: README.md
+	
+README.md:
 
-README.md: README.md
+	echo #Guessing Game# > README.md
+	echo "Time stamp when make was run:" >> README.md
+	date >> README.md	
+	echo "Lines of code in guessinggame.sh:" >> README.md
+	wc -l guessinggame.sh|egrep -o '[0-9]+' >> README.md
 
-echo "Test" > README.md
+clean:
+	rm README.md
