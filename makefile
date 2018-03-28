@@ -1,7 +1,7 @@
 all: README.md
 	
 README.md:
-	echo "#The Guessing Game Information#" > README.md
+	echo "####The Guessing Game Information####" > README.md
 	
 
 	echo #Guessing Game# > README.md
